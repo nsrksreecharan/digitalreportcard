@@ -7,5 +7,166 @@
         Name (max 10 characters): <input type="text" id="fname" size="20" name="fname"><br>
         <input type="submit" value="Submit" onclick="myFunction()"> 
         <p id="o"></p>
+         <script>
+      function myFunction() {
+        var students={
+        SIVAJI : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        MAHINDRA : {
+            w:"98",
+            p:"7",
+            d:"93",
+            da:"91",
+            dc:"90",
+            pe:"0"
+        },
+        NIKHIL : {
+            w:"88",
+            p:"96",
+            d:"85",
+            da:"92",
+            dc:"19",
+            pe:"100"
+        },
+        KARTHIK : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"90"
+        },
+        THARAK : {
+            w:"98",
+            p:"96",
+            d:"99",
+            da:"89",
+            dc:"99",
+            pe:"100"
+        },
+        PRAKASH : {
+            w:"98",
+            p:"96",
+            d:"100",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        JANAKI : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"100",
+            dc:"99",
+            pe:"100"
+        },
+        CHARAN : {
+            w:"100",
+            p:"100",
+            d:"100",
+            da:"100",
+            dc:"100",
+            pe:"100"
+        },
+        SEKHAR : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        DILEEP : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        HARSHA : {
+            w:"98",
+            p:"96",
+            d:"99",
+            da:"98",
+            dc:"99",
+            pe:"100"
+        },
+        SANKAR : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        HARTHIK : {
+            w:"8",
+            p:"6",
+            d:"5",
+            da:"12",
+            dc:"9",
+            pe:"0"
+        },
+        JAGADEESH : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        YAGNESH : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        NITHIN : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"100"
+        },
+        SATHISH : {
+            w:"18",
+            p:"16",
+            d:"15",
+            da:"ABSENT",
+            dc:"9",
+            pe:"0"
+        },
+        DINESH : {
+            w:"98",
+            p:"96",
+            d:"95",
+            da:"92",
+            dc:"99",
+            pe:"90"
+        }
+    }
+        var fname = document.getElementById("fname").value;
+        var i=fname.toUpperCase();
+        var p=students[i];
+        if(p==undefined)
+        {
+        document.getElementById("o").innerHTML=`Your Name Is Not In The Records !! <br> Because  You Have Failed All Subjects,<br>better Luck Next Time!!<br><sub>any issues with results contact your respected faculty</sub>`;
+        }
+        else
+        {
+            document.getElementById("o").innerHTML=`<hr> web technologies : ${p.w} <hr> python : ${p.p}<hr>  operating system: ${p.d}<hr> design algorithms : ${p.da}<hr> data communication : ${p.dc}<hr> personal ethics and human values : ${p.pe}`
+        }
+       }
+      </script>
     </body>
 </html>
