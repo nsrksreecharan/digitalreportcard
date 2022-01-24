@@ -1,174 +1,285 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Digital Report Card</title>
-    </head>
-    <body>
+
+<head>
+    <title>Digital Report Card</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
+        body {
+            background-color: rgb(248, 114, 4);
+        }
         
-        Student Name : <input type="text" id="fname" size="20" name="fname"><br>
+        h1 {
+            text-align: center;
+            margin-top: 70px;
+            margin-left: 30px;
+            width: 1325px;
+            font-size: 40px;
+            font-family: 'Bebas Neue', cursive;
+        }
         
-        <input type="submit" value="Check 3-1 results" onclick="myFunction()"> 
+        hr {
+            color: black;
+        }
+        
+        .int {
+            width: 400px;
+            height: 200px;
+            margin-top: 0px;
+            margin-left: 500px;
+            font-size: 30px;
+            border: 5px solid black;
+            text-align: center;
+            font-family: 'Lobster', cursive;
+            background-color: antiquewhite;
+        }
+        
+        input[type=text] {
+            background: transparent;
+            border: none;
+            text-align: center;
+            border-bottom: 2px solid black;
+            font-family: 'Lobster', cursive;
+            font-size: 20px;
+        }
+        
+        input:focus {
+            outline: none;
+            border: none;
+            font-size: 20px;
+            border-bottom: 2px solid black;
+            font-family: 'Lobster', cursive;
+        }
+        
+        button {
+            background: transparent;
+            border: none;
+            font-family: 'Bebas Neue', cursive;
+            margin-top: 20px;
+            font-size: 25px;
+        }
+        
+        .report {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 40px;
+            text-align: right;
+            margin-left: 100px;
+            width: 700px;
+        }
+        
+        .outp {
+            border: 2px solid black;
+            background-color: antiquewhite;
+            width: 400px;
+            height: 400px;
+            margin-left: 40px;
+        }
+        
+        .outp2 {
+            border: 5px solid black;
+            background-color: antiquewhite;
+            margin-top: 0px;
+            margin-right: 100px;
+            width: 650px;
+            height: 510px;
+            font-family: 'Bebas Neue', cursive;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>student digital report card</h1>
+    <div class="int">
+        <a class="a">Enter Your Name</a>
+        <br> <input type="text" id="fname" size="20" name="fname" autocomplete="off"><br>
+        <button onclick="myFunction();scrolls();"> submit<button></button></button>
+    </div>
+    <div>
+
         <p id="o"></p>
-      <script>
-      function myFunction() {
-        var students={
-        SIVAJI : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        MAHINDRA : {
-            w:"98",
-            p:"7",
-            d:"93",
-            da:"91",
-            dc:"90",
-            pe:"0"
-        },
-        NIKHIL : {
-            w:"88",
-            p:"96",
-            d:"85",
-            da:"92",
-            dc:"19",
-            pe:"100"
-        },
-        KARTHIK : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"90"
-        },
-        THARAK : {
-            w:"98",
-            p:"96",
-            d:"99",
-            da:"89",
-            dc:"99",
-            pe:"100"
-        },
-        PRAKASH : {
-            w:"98",
-            p:"96",
-            d:"100",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        JANAKI : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"100",
-            dc:"99",
-            pe:"100"
-        },
-        CHARAN : {
-            w:"100",
-            p:"100",
-            d:"100",
-            da:"100",
-            dc:"100",
-            pe:"100"
-        },
-        SEKHAR : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        DILEEP : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        HARSHA : {
-            w:"98",
-            p:"96",
-            d:"99",
-            da:"98",
-            dc:"99",
-            pe:"100"
-        },
-        SANKAR : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        HARTHIK : {
-            w:"8",
-            p:"6",
-            d:"5",
-            da:"12",
-            dc:"9",
-            pe:"0"
-        },
-        JAGADEESH : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        YAGNESH : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        NITHIN : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"100"
-        },
-        SATHISH : {
-            w:"18",
-            p:"16",
-            d:"15",
-            da:"ABSENT",
-            dc:"9",
-            pe:"0"
-        },
-        DINESH : {
-            w:"98",
-            p:"96",
-            d:"95",
-            da:"92",
-            dc:"99",
-            pe:"90"
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var students = {
+                SIVAJI: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                MAHINDRA: {
+                    w: "98",
+                    p: "7",
+                    d: "93",
+                    da: "91",
+                    dc: "90",
+                    pe: "0"
+                },
+                NIKHIL: {
+                    w: "88",
+                    p: "96",
+                    d: "85",
+                    da: "92",
+                    dc: "19",
+                    pe: "100"
+                },
+                KARTHIK: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "90"
+                },
+                SRIDEVI: {
+                    w: "98",
+                    p: "96",
+                    d: "99",
+                    da: "89",
+                    dc: "99",
+                    pe: "100"
+                },
+                THARAK: {
+                    w: "98",
+                    p: "96",
+                    d: "99",
+                    da: "89",
+                    dc: "99",
+                    pe: "100"
+                },
+                PHANI: {
+                    w: "98",
+                    p: "96",
+                    d: "99",
+                    da: "89",
+                    dc: "99",
+                    pe: "100"
+                },
+                PRAKASH: {
+                    w: "98",
+                    p: "96",
+                    d: "100",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                JANAKI: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "100",
+                    dc: "99",
+                    pe: "100"
+                },
+                CHARAN: {
+                    w: "100",
+                    p: "100",
+                    d: "100",
+                    da: "100",
+                    dc: "100",
+                    pe: "100"
+                },
+                SEKHAR: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                DILEEP: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                HARSHA: {
+                    w: "98",
+                    p: "96",
+                    d: "99",
+                    da: "98",
+                    dc: "99",
+                    pe: "100"
+                },
+                SANKAR: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                HARTHIK: {
+                    w: "8",
+                    p: "6",
+                    d: "5",
+                    da: "12",
+                    dc: "9",
+                    pe: "0"
+                },
+                JAGADEESH: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                YAGNESH: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                NITHIN: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "100"
+                },
+                SATHISH: {
+                    w: "18",
+                    p: "16",
+                    d: "15",
+                    da: "ABSENT",
+                    dc: "9",
+                    pe: "0"
+                },
+                DINESH: {
+                    w: "98",
+                    p: "96",
+                    d: "95",
+                    da: "92",
+                    dc: "99",
+                    pe: "90"
+                }
+            }
+            var fname = document.getElementById("fname").value;
+            var i = fname.toUpperCase();
+            var p = students[i];
+            if (p == undefined) {
+                document.getElementById("o").innerHTML = ` <p class="outp" style="font-size:30px;margin-left: 450px;width:500px;height:200px;"><a style="font-family: 'Bebas Neue', cursive;">Your Name Is Not In The Records !! <br> Because  You Have Failed All Subjects,<br>better Luck Next Time!!<br><a><sub font-size:10px;font-family:'Lobster', cursive;>any issues with results contact your respected faculty</sub></p>`;
+            } else {}
+            document.getElementById("o").innerHTML = ` <p class="report">YOUR RESULT</p><div class="outp2" style="font-size:40px;margin-left: 400px;"> web technologies : ${p.w} <hr> python: ${p.p}<hr>  operating system: ${p.d}<hr> design algorithms : ${p.da}<hr> data communication : ${p.dc}<hr> personal ethics and human values : ${p.pe}</div>`
         }
-    }
-        var fname = document.getElementById("fname").value;
-        var i=fname.toUpperCase();
-        var p=students[i];
-        if(p==undefined)
-        {
-        document.getElementById("o").innerHTML=`Your Name Is Not In The Records !! <br> Because  You Have Failed All Subjects,<br>better Luck Next Time!!<br><sub>any issues with results contact your respected faculty</sub>`;
+
+        function scrolls() {
+            window.scrollTo(0, document.body.scrollHeight);
         }
-        else
-        {
-            document.getElementById("o").innerHTML=`<hr> web technologies : ${p.w} <hr> python : ${p.p}<hr>  operating system: ${p.d}<hr> design algorithms : ${p.da}<hr> data communication : ${p.dc}<hr> personal ethics and human values : ${p.pe}`
-        }
-       }
-      </script>
-    </body>
+    </script>
+
+</body>
+
 </html>
